@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Class must match with data type of the property inside Person Class -->
+    <bean id="address" class="com.test.Address" >
+        <property name="country" value="Turkey" />
+        <property name="city" value="İstanbul" />
+    </bean>
+
+    <bean id="person" class="com.test.Person" autowire="byType" >
+        <!-- Person bean need an address class.
+         if there is just one bean from Address class,
+         autowire byType will find the setter methods of the Address
+         inside Person class for injecting the value
+         -->
+    </bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
